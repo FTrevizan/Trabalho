@@ -31,7 +31,7 @@ class EstabelecimentoController extends Controller
      */
     public function store(Request $request)
     {
-        $estabelecimento = new  estabelecimento([
+        $estabelecimento = new  Estabelecimento([
             'nome' => $request ->input('nome'),
             'cidade' => $request->input('cidade'),
         ]);
@@ -64,6 +64,7 @@ class EstabelecimentoController extends Controller
     public function update(Request $request, string $id)
     {
         $estabelecimento =Estabelecimento::findOrFail($id);
+        
         $data = $request->validate([
             'nome'      => 'required|string|max:255',
             'cidade' => 'nullable',
@@ -89,7 +90,7 @@ class EstabelecimentoController extends Controller
 
         return redirect()
             ->route('estabelecimentos.index')
-            ->with('success', 'esta$estabelecimento excluída com sucesso!');
+            ->with('success', '$estabelecimento excluída com sucesso!');
     }
 }
 

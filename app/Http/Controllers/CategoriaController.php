@@ -33,6 +33,7 @@ class CategoriaController extends Controller
         $categoria = new Categoria([
             'nome' => $request ->input('nome'),
             'total' => $request->input('total'),
+            
         ]);
         $categoria->save();
         return redirect()->route('categorias.index');

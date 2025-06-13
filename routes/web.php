@@ -5,8 +5,10 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CarteiraController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EstabelecimentoController;
+
 
 
 Route::get('/', function () {
@@ -31,6 +33,8 @@ Route::view('categorias.index', 'categorias')
     ->name('categorias');
 Route::resource('categorias',CategoriaController::class);
 Route::resource('estabelecimentos',EstabelecimentoController::class);
+Route::resource('carteiras',CarteiraController::class);
+
 
 
 require __DIR__.'/auth.php';

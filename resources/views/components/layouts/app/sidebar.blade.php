@@ -29,6 +29,12 @@
                 </flux:navlist.group>
             </flux:navlist>
 
+            <flux:navlist variant="outline">
+                <flux:navlist.group :heading="__('Platform')" class="grid">
+                    <flux:navlist.item icon="circle-stack" :href="route('carteiras.index')" :current="request()->routeIs('carteiras.index')" wire:navigate>{{ __('Carteira') }}</flux:navlist.item>
+                </flux:navlist.group>
+            </flux:navlist>
+
             <flux:spacer />
             
             <!-- Desktop User Menu -->
